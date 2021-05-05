@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const fs =require('fs');
 const os = require('os');
+const port = process.env.PORT||8000;
 var systemName = os.cpus();
 var computerType = os.platform();
 var ram = os.totalmem()/1024/1024/1024;
@@ -14,7 +15,7 @@ app.get("/",(req,res)=>
     //console.log(myFile);
     res.send();
 });
-app.listen(8080,()=>
+app.listen(port,()=>
 {
     console.log("server Running");
 });
